@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>官方 Availability Alerts 中文配置指南 — ParkAlert</title>
+  <style>
+    :root { font-family: system-ui, sans-serif; color: #1a1a1a; }
+    body { max-width: 720px; margin: 2rem auto; padding: 0 1rem 3rem; line-height: 1.55; }
+    h1 { font-size: 1.35rem; }
+    h2 { font-size: 1.1rem; margin-top: 1.6rem; }
+    h3 { font-size: 1rem; }
+    .warn { background: #fff6e5; border: 1px solid #f0c36d; padding: .75rem 1rem; border-radius: 8px; }
+    .ok { background: #eef8f0; border: 1px solid #8bc99a; padding: .75rem 1rem; border-radius: 8px; }
+    .block { background: #fde8e8; border: 1px solid #e08a8a; padding: .75rem 1rem; border-radius: 8px; }
+    .muted { color: #555; font-size: .9rem; }
+    table { border-collapse: collapse; width: 100%; font-size: .9rem; margin: .5rem 0 1rem; }
+    th, td { border: 1px solid #ddd; padding: .4rem .5rem; text-align: left; vertical-align: top; }
+    th { background: #f6f6f6; }
+    ol, ul { padding-left: 1.25rem; }
+    a { color: #0b5fff; }
+    footer { margin-top: 2rem; font-size: .85rem; color: #666; border-top: 1px solid #eee; padding-top: 1rem; }
+    code { background: #f3f3f3; padding: 0 .25rem; border-radius: 3px; }
+    .grade { font-size: .8rem; color: #666; }
+  </style>
+</head>
+<body>
+  <p class="muted"><a href="index.html">← 返回开通页</a></p>
+  <h1>官方 Availability Alerts — 中文配置指南</h1>
+  <p class="muted">白名单源③可交付内容 · 2026-10-24（Asia/Shanghai）· 可离线静态打开</p>
+
+  <div class="block">
+    <strong>产品边界：</strong>本页教你<strong>自己在官网</strong>设置最多 3 条官方铃铛。
+    <strong>空位通知仍由官方发给你</strong>。我们不扫描 Recreation.gov 实时空位 <code>/api</code>，不代订、不转售。
+    <strong>提醒 ≠ 订到。</strong>
+  </div>
+
+  <div class="ok" style="margin-top:.75rem">
+    <strong>30 秒结论：</strong>登录 recreation.gov → 打开营地页 → Filters → View Results → 点<strong>铃铛</strong> → 选日期/晚数 → Save Alert。
+    一账号 ≤3 条；收到邮件后立刻自己下单。季节<strong>首次放号</strong>不会走这条铃铛。
+  </div>
+
+  <h2>官方依据 <span class="grade">证据 A</span></h2>
+  <ul>
+    <li><a href="https://help.recreation.gov/helpcenter/en/camping-availability-alerts?id=kb_article&amp;sysparm_article=KB0011970" rel="noopener" target="_blank">KB0011970 Camping Availability Alerts</a>（最多 3 条；不保证订到；非季节首放）</li>
+    <li><a href="https://www.recreation.gov/articles/list/tips-for-making-campsite-reservations-at-popular-locations/281" rel="noopener" target="_blank">Tips for Making Campsite Reservations</a>（Tip #5）</li>
+    <li><a href="https://www.recreation.gov/robots.txt" rel="noopener" target="_blank">robots.txt</a>：Disallow <code>/api</code></li>
+  </ul>
+
+  <h2>逐步：添加一条 Alert</h2>
+  <ol>
+    <li>打开目标<strong>营地</strong>页。</li>
+    <li>点 <strong>Filters</strong>，勾选真实需要的条件（帐篷/宠物/水电等）。</li>
+    <li>点 <strong>View Results</strong>。</li>
+    <li>点 <strong>铃铛（Bell）</strong>图标。</li>
+    <li>选 <strong>Start Date</strong> 与 <strong>Number of Nights</strong>；日期可灵活则勾选 Flexible ±3 days。</li>
+    <li>核对后点 <strong>Save Alert</strong>，看到绿色成功提示。</li>
+  </ol>
+
+  <h2>管理 / 删除</h2>
+  <ol>
+    <li>登录 → 菜单 → <strong>Account</strong> → <strong>Availability Alerts</strong>。</li>
+    <li>铅笔编辑部分细节；X 删除。</li>
+    <li>筛选条件<strong>不能事后改</strong>——要改 Filters 只能删了重建。满 3 条必须先腾槽。</li>
+  </ol>
+
+  <h2>必须知道的限制 <span class="grade">证据 A</span></h2>
+  <ul>
+    <li>同时最多 <strong>3</strong> 条活跃 Alerts。</li>
+    <li>不能指定某一个营位号，只能营地 + 筛选。</li>
+    <li><strong>不会</strong>在季节开放/首次放号时通知；只在已有预约被释放（如取消）时通知。</li>
+    <li>暂无短信 SMS。</li>
+    <li>同一条件会发给所有设了相同 Alerts 的人 → 必须自己立刻下单。</li>
+  </ul>
+
+  <h2>多公园清单怎么排（≤3）</h2>
+  <div class="warn">
+    按「不可替代性」占槽，不要把三个「随便看看」塞满。已订到或行程取消 → 马上删，腾给下一目标。
+  </div>
+  <table>
+    <thead>
+      <tr><th>#</th><th>优先级</th><th>放什么</th><th>不建议</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>槽1</td><td>P0</td><td>唯一必去、靠取消才能上车的核心营地（日期已定）</td><td>随便看看</td></tr>
+      <tr><td>槽2</td><td>P1</td><td>同行程备选营地（邻近）</td><td>与槽1完全同质却各占一条</td></tr>
+      <tr><td>槽3</td><td>P2</td><td>第二行程窗口，或日期 ±3 天灵活的一条</td><td>指望铃铛通知季节首放（不会来）</td></tr>
+    </tbody>
+  </table>
+  <p class="muted">工作表可自建：公园 / 营地 / 日期 / 晚数 / Filters / 占用槽 / 备注。完整 Markdown 版见仓库 <code>guides/official_alerts_zh.md</code>。</p>
+
+  <h2>收到邮件之后</h2>
+  <ol>
+    <li>点邮件里的 <strong>View and Book Campsite</strong>。</li>
+    <li>立刻自己完成支付；若已订走，换日期或换备选——这是正常竞争。</li>
+    <li>邮件可能显示大约多少人收到同一条（热门营地竞争激烈）。</li>
+  </ol>
+
+  <h2>和本产品其他提醒的分工</h2>
+  <table>
+    <thead><tr><th>你想知道</th><th>用什么</th></tr></thead>
+    <tbody>
+      <tr><td>营地取消后有空</td><td><strong>官方 Alerts</strong>（本页）</td></tr>
+      <tr><td>Timed entry / 放号政策公告</td><td>NPS News RSS（合规低频）</td></tr>
+      <tr><td>新抽选窗口上线</td><td>公开页 <a href="https://www.recreation.gov/lottery/available" rel="noopener" target="_blank">/lottery/available</a>（日级 HTML，禁 /api）</td></tr>
+      <tr><td>秒级刷空位</td><td><strong>不做</strong></td></tr>
+    </tbody>
+  </table>
+
+  <div class="ok" style="margin-top:1rem">
+    <strong>对外话术：</strong>空位通知仍靠官方 Availability Alerts；我们帮你用中文配好、排好多公园清单，并用合规源提醒抽签/公园新闻。提醒成功 ≠ 抢到名额。
+  </div>
+
+  <footer>
+    <p><a href="index.html">开通页</a> · <a href="tos.html">服务条款</a> · <a href="privacy.html">隐私</a></p>
+    <p>ParkAlert 不代订、不转售、不囤票、不扫描实时空位 API。证据备份于审计目录 <code>evidence/</code>。</p>
+  </footer>
+</body>
+</html>
